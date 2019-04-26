@@ -1,0 +1,29 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7.5
+
+suites:
+  - name: default
+    run_list:
+      - recipe[provision::vim]
+      - recipe[provision::mc]
+      - recipe[provision::htop]
+      - recipe[provision::mysql-server]
+      - recipe[provision::hello-world]            
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
