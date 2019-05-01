@@ -2,6 +2,10 @@
 driver:
   name: vagrant
 
+driver_config:
+  network:
+  - ["forwarded_port", {guest: 8080, host: 8080}]
+
 provisioner:
   name: chef_solo
   # You may wish to disable always updating cookbooks in CI or other testing environments.
@@ -23,6 +27,7 @@ suites:
       - recipe[provision::htop]
       - recipe[provision::mysql-server]
       - recipe[provision::hello-world]            
+      - recipe[provision::jenkins]            
     verifier:
       inspec_tests:
         - test/integration/default
