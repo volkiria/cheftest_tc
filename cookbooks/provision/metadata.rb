@@ -7,6 +7,7 @@ long_description 'Installs/Configures provision'
 version '0.1.0'
 chef_version '>= 13.0'
 
+depends 'yum-mysql-community', '~> 4.0.1'
 depends 'mysql', '~> 8.0'
 
 # The `issues_url` points to the location where issues for this cookbook are

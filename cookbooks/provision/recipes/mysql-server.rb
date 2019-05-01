@@ -4,6 +4,8 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
+include_recipe 'yum-mysql-community::mysql57'
+
 mysql_service 'cheftest' do
     port '3306'
     version '5.7'
