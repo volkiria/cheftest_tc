@@ -4,16 +4,9 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-remote_file '/tmp/mysql-community-release-el7-7.noarch.rpm' do
-      source 'http://repo.mysql.com/mysql-community-release-el7-7.noarch.rpm'
-      owner 'vagrant'
-      group 'vagrant'
-      mode '0644'
-      action :create
+mysql_service 'cheftest' do
+    port '3306'
+    version '5.7'
+    initial_root_password 'change_me'
+    action [:create, :start]
 end
-
-rpm_package '/tmp/mysql-community-release-el7-7.noarch.rpm' do
-    action :install
-end
-
-package 'mysql-server'
