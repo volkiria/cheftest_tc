@@ -28,6 +28,7 @@ suites:
       - recipe[provision::mysql-server]
       - recipe[provision::hello-world]            
       - recipe[provision::jenkins]            
+      - recipe[provision::docker]            
     verifier:
       inspec_tests:
         - test/integration/default

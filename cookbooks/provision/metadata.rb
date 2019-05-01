@@ -10,6 +10,7 @@ chef_version '>= 13.0'
 depends 'yum-mysql-community', '~> 4.0.1'
 depends 'mysql', '~> 8.0'
 depends 'jenkins', '~> 7.0.0'
+depends 'docker', '~> 4.9.2'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
