@@ -14,6 +14,8 @@ depends 'yum-mysql-community', '~> 4.0.1'
 depends 'mysql', '~> 8.0'
 depends 'jenkins', '~> 7.0.0'
 depends 'docker', '~> 4.9.2'
+depends 'database', '~> 6.1.1'
+depends 'mysql2_chef_gem', '~> 2.1.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
