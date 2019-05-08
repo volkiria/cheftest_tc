@@ -1,6 +1,9 @@
 ---
 driver:
   name: vagrant
+  customize:
+    memory: 1024
+    cpus: 2
 
 driver_config:
   network:
@@ -28,6 +31,8 @@ suites:
       - recipe[provision::mysql-server]
       - recipe[provision::hello-world]            
       - recipe[provision::jenkins]            
+      - recipe[provision::jenkins_configure]
+      - recipe[provision::jenkins_manage]
       - recipe[provision::docker]            
     verifier:
       inspec_tests:
